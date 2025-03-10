@@ -23,6 +23,10 @@ export const ROUTES: EachRoute[] = [
         title: "Supported Controllers",
         href: "/controllers",
       },
+      {
+        title: "Warband Guide",
+        href: "/warbands",
+      },
     ],
   },
   {
