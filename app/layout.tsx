@@ -20,10 +20,10 @@ const monoFont = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AriaDocs - Template",
-  metadataBase: new URL("https://ariadocs.vercel.app/"),
+  title: "DI Guide - Diablo Immortal Resource Hub",
+  metadataBase: new URL("https://di-guide.vercel.app/"),
   description:
-    "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements.",
+    "A comprehensive guide and resource hub for Diablo Immortal players. Find optimized builds, legendary items, dungeon strategies, PvP tactics, and more.",
 };
 
 export default function RootLayout({
