@@ -16,14 +16,6 @@ export function Footer() {
             >
               ThunderClap Gaming Community
             </Link>
-            . Submit edits on{" "}
-            <Link
-              className="px-1 underline underline-offset-2"
-              href="https://github.com/yourusername/di-guide"
-            >
-              GitHub
-            </Link>
-            .
           </p>
         </div>
 
