@@ -2,8 +2,6 @@
 
 A comprehensive guide and resource hub for Diablo Immortal players, built with Next.js and MDX.
 
-![Diablo Immortal Guide](/public/public-og.png)
-
 ## About
 
 The Diablo Immortal Guide is a community-driven resource designed to help players navigate the world of Sanctuary on mobile and PC. Our goal is to provide up-to-date, accurate information on:
@@ -15,8 +13,6 @@ The Diablo Immortal Guide is a community-driven resource designed to help player
 - Farming routes and efficiency guides
 - Event calendars and rewards
 - Game mechanics and hidden systems
-
-This site is built using AriaDocs, a feature-rich documentation template with MDX support, search functionality, and dark/light themes.
 
 ## Features
 
