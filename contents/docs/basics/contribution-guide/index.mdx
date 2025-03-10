@@ -1,0 +1,136 @@
+---
+title: Contribution Guide
+description: How to contribute to the Diablo Immortal Guide
+---
+
+# Contributing to DI Guide
+
+We welcome contributions from the community! This guide will help you get started with contributing to the DI Guide project.
+
+## Getting Started
+
+To contribute to the DI Guide project, you'll need to set up a local development environment:
+
+<Stepper>
+  <StepperItem title="Step 1: Fork and Clone the Repository">
+    Begin by forking our repository on GitHub, then clone your fork:
+
+    ```plaintext
+    git clone https://github.com/your-username/di-guide.git
+    cd di-guide
+    ```
+  </StepperItem>
+
+  <StepperItem title="Step 2: Install Dependencies">
+    Install all necessary project dependencies with pnpm:
+
+    ```plaintext
+    pnpm install
+    ```
+  </StepperItem>
+
+  <StepperItem title="Step 3: Run the Development Server">
+    Start the development server to preview your changes:
+
+    ```plaintext
+    pnpm dev
+    ```
+    
+    The site will be accessible at http://localhost:3000
+  </StepperItem>
+</Stepper>
+
+## Adding New Content
+
+### Documentation and Guides
+
+Our documentation is written in MDX, which allows you to use React components within Markdown:
+
+1. **Create a new guide**: Add a new directory under `contents/docs/` following the site structure
+2. **Add index.mdx file**: Create an `index.mdx` file with proper frontmatter:
+
+```markdown
+---
+title: Your Guide Title
+description: A brief description of your guide
+---
+
+# Your Guide Content
+
+Write your guide content here using Markdown and MDX components.
+```
+
+3. **Update navigation**: If needed, update the `lib/routes-config.ts` file to add your guide to the navigation menu
+
+### Class Builds
+
+For class build guides, follow this structure:
+
+1. Create a new directory under `contents/docs/class-builds/` with the class name (e.g., `barbarian`)
+2. Add content following our established format
+3. Include sections for abilities, legendary items, set items, and build variations
+
+## Content Guidelines
+
+When contributing content, please follow these guidelines:
+
+- **Accuracy**: Verify all information before submitting
+- **Clarity**: Use clear, concise language
+- **Formatting**: Follow established formatting patterns
+- **Images**: Include relevant screenshots or diagrams when helpful
+- **Citations**: Link to sources for specific information when applicable
+
+## Submitting Your Contribution
+
+<Stepper>
+  <StepperItem title="Step 1: Create a Branch">
+    Create a new branch for your changes:
+
+    ```plaintext
+    git checkout -b feature/your-feature-name
+    ```
+  </StepperItem>
+
+  <StepperItem title="Step 2: Make Changes">
+    Make your changes to add or update content.
+  </StepperItem>
+
+  <StepperItem title="Step 3: Run Lint">
+    Ensure your changes pass our linting checks:
+
+    ```plaintext
+    pnpm lint
+    ```
+  </StepperItem>
+
+  <StepperItem title="Step 4: Commit and Push">
+    Commit your changes with a descriptive message and push to your fork:
+
+    ```plaintext
+    git commit -m "Add guide for Barbarian Whirlwind build"
+    git push origin feature/your-feature-name
+    ```
+  </StepperItem>
+
+  <StepperItem title="Step 5: Create Pull Request">
+    Go to the [DI Guide repository](https://github.com/Mandalorian007/di-guide) and create a pull request from your fork's branch to the main repository.
+  </StepperItem>
+</Stepper>
+
+## Code of Conduct
+
+When contributing to the DI Guide project, please follow our code of conduct:
+
+- Be respectful and inclusive in your language
+- Focus on factual information and helpful guidance
+- Avoid promoting exploits or unintended game mechanics
+- Give constructive feedback when reviewing others' contributions
+
+## Need Help?
+
+If you need help or have questions about contributing, you can:
+
+- Join our [Discord community](https://discord.gg/thunderclap)
+- Open an issue on [GitHub](https://github.com/Mandalorian007/di-guide/issues)
+
+Thank you for helping make DI Guide a valuable resource for the Diablo Immortal community!
