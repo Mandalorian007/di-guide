@@ -10,6 +10,8 @@
 - Blogs: Add MDX files to `/contents/blogs/` with frontmatter
 - Documentation: Add MDX files to `/contents/docs/` following folder structure
 - Content uses MDX with custom components for notes, code blocks, steppers, etc.
+- **IMPORTANT**: Always run `pnpm lint` before committing changes
+- All PRs are automatically deployed to production when merged to main
 
 ## Code Style Guidelines
 
