@@ -28,12 +28,8 @@ export const ROUTES: EachRoute[] = [
         href: "/warbands",
       },
       {
-        title: "Gem Guides",
-        href: "/gems",
-        noLink: true,
-        items: [
-          { title: "5-Star Gem Internal Sockets", href: "/internal-gems" },
-        ],
+        title: "5-Star Gem Internal Sockets",
+        href: "/internal-gems",
       },
     ],
   },
