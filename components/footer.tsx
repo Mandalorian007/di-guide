@@ -32,6 +32,8 @@ export function FooterButtons() {
     <>
       <Link
         href="https://ko-fi.com/thunderclapgaming"
+        target="_blank"
+        rel="noopener noreferrer"
         className={buttonVariants({ variant: "outline", size: "sm" })}
       >
         <CoffeeIcon className="h-4 w-4 mr-2 text-amber-600 fill-current" />
