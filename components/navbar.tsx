@@ -18,7 +18,7 @@ export const NAVLINKS = [
   },
   {
     title: "Class Builds",
-    href: "#",
+    href: "/docs/class-builds/overview",
   },
   {
     title: "Discord",

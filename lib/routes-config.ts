@@ -45,6 +45,14 @@ export const ROUTES: EachRoute[] = [
       },
     ],
   },
+  {
+    title: "Class Builds",
+    href: "/class-builds",
+    noLink: true,
+    items: [
+      { title: "Overview", href: "/overview" },
+    ],
+  },
 ];
 
 type Page = { title: string; href: string };
