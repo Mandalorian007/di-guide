@@ -1,5 +1,5 @@
 import { ModeToggle } from "@/components/theme-toggle";
-import { CommandIcon, MoveUpRightIcon } from "lucide-react";
+import { BookTextIcon, MoveUpRightIcon } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import Anchor from "./anchor";
@@ -70,7 +70,7 @@ export function Navbar() {
 export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5">
-      <CommandIcon className="w-6 h-6 text-muted-foreground" strokeWidth={2} />
+      <BookTextIcon className="w-6 h-6 text-muted-foreground" strokeWidth={2} />
       <h2 className="text-md font-bold font-code">DI Guide</h2>
     </Link>
   );
