@@ -1,5 +1,5 @@
 import { ModeToggle } from "@/components/theme-toggle";
-import { CommandIcon } from "lucide-react";
+import { CommandIcon, MoveUpRightIcon } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import Anchor from "./anchor";
@@ -26,8 +26,9 @@ export const NAVLINKS = [
     href: "#",
   },
   {
-    title: "Community",
-    href: "https://github.com/nisabmohd/Aria-Docs/discussions",
+    title: "Discord",
+    href: "https://discord.gg/thunderclap",
+    external: true,
   },
 ];
 
@@ -86,8 +87,10 @@ export function NavMenu({ isSheet = false }) {
             absolute
             className="flex items-center gap-1 sm:text-base text-[14.5px] dark:text-stone-300/85 text-stone-800"
             href={item.href}
+            target={item.external ? "_blank" : undefined}
           >
             {item.title}
+            {item.external && <MoveUpRightIcon className="w-3.5 h-3.5 ml-0.5" />}
           </Anchor>
         );
         return isSheet ? (
