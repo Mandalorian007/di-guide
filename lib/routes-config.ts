@@ -19,6 +19,10 @@ export const ROUTES: EachRoute[] = [
         title: "Contribution Guide",
         href: "/contribution-guide",
       },
+      {
+        title: "Supported Controllers",
+        href: "/controllers",
+      },
     ],
   },
   {
