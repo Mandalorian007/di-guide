@@ -1,95 +1,85 @@
-## AriaDocs - Documentation Template
+# Diablo Immortal Guide
 
-This feature-packed documentation template, built with Next.js, offers a sleek and responsive design, perfect for all your project documentation needs.
+A comprehensive guide and resource hub for Diablo Immortal players, built with Next.js and MDX.
 
-<img src="./public/public-og.png" />
+![Diablo Immortal Guide](/public/public-og.png)
 
-<br/>
+## About
 
-Here are all versions of the AriaDocs template, each crafted for specific use cases:
+The Diablo Immortal Guide is a community-driven resource designed to help players navigate the world of Sanctuary on mobile and PC. Our goal is to provide up-to-date, accurate information on:
 
+- Character builds and class guides
+- Legendary items and set bonuses
+- Dungeon and raid strategies
+- PvP tactics and battleground tips
+- Farming routes and efficiency guides
+- Event calendars and rewards
+- Game mechanics and hidden systems
 
-- **Advanced Docs:** A comprehensive template offering extensive features for in-depth documentation needs. Perfect for larger projects that require detailed explanations and advanced configurations.  
-  [Explore the Advanced Docs](https://github.com/nisabmohd/Aria-Docs/tree/master)
+This site is built using AriaDocs, a feature-rich documentation template with MDX support, search functionality, and dark/light themes.
 
-- **Lite Version:** A streamlined, no-frills template perfect for straightforward documentation needs.  
-  [Explore the Lite Version](https://github.com/nisabmohd/Aria-Docs/tree/minimal-docs)
+## Features
 
-- **Version with Versioning:** A powerful option for projects that require historical documentation tracking. Manage multiple versions of your docs effortlessly.  
-  [Check out the Versioning Feature](https://github.com/nisabmohd/Aria-Docs/tree/version_docs)
+- **Class Guides**: Detailed guides for all classes with recommended builds
+- **Interactive Maps**: Explore Sanctuary with annotated maps and points of interest
+- **Progression Guides**: Optimized paths for leveling and Paragon progression
+- **Gear Calculator**: Plan your stats and compare different equipment options
+- **Event Tracker**: Stay updated with current and upcoming events
+- **Blog Section**: Latest news, patch notes, and meta analysis
+- **Responsive Design**: Optimal viewing on both mobile and desktop
 
-- **i18n Support Version (NEW):** Designed for international audiences, this version will offer comprehensive multilingual support.  
-  [Preview the i18n Support](https://github.com/nisabmohd/Aria-Docs/tree/i18n-support)
+## For Developers
 
-### Quick Start
+### Getting Started
 
-You can create a new Ariadocs project using the command:
+Clone the repository and install dependencies:
 
-```plaintext
-npx create-aria-doc <project-directory>
+```bash
+git clone <repository-url>
+cd di-guide
+pnpm install
 ```
 
-### Expected Output
+### Development
 
-When you run the CLI, you can expect an output similar to this:
+Start the development server:
 
-```
-Creating a new Ariadocs project in /path/to/your/project from the master branch...
-Cloning Master (Full Documentation)...
-Ariadocs project successfully created in /path/to/your/project!
-
-Next steps:
-1. Navigate to your project directory:
-   cd <project-directory>
-2. Install dependencies:
-   // To support React 19, package maintainers will need to test and update their packages to include React 19 as a peer dependency. This is already in progress.
-   npm install --force 
-3. Start the development server:
-   npm run dev
-```
-
-## Getting Started
-
-First, run the development server:
-
-```plaintext
-npm run dev
-# or
-yarn dev
-# or
+```bash
 pnpm dev
-# or
-bun dev
 ```
 
+The site will be available at [http://localhost:3000](http://localhost:3000).
 
-## Deploy on Vercel
+### Commands
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Content Structure
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/nisabmohd/Aria-Docs)
+- **Blog posts**: Add MDX files to `/contents/blogs/` with proper frontmatter
+- **Documentation**: Add MDX files to `/contents/docs/` following the folder structure
+- **Images**: Store in `/public/` directory
 
-## Key Features
+### Contributing
 
-| **Feature**                   | **Description**                                          |
-|-------------------------------|----------------------------------------------------------|
-| MDX Support                   | Write interactive documentation with MDX.                |
-| Nested Pages                  | Organize content in a nested, hierarchical structure.    |
-| Blog Section                  | Include a dedicated blog section.                        |
-| Table of Contents             | Auto-generated TOC for easy navigation.                  |
-| Pagination                    | Split content across multiple pages.                     |
-| Syntax Highlighting           | Highlight code for better readability.                   |
-| Code Line Highlighting & Titles | Highlight specific lines with descriptive titles.      |
-| Interactive Code Blocks       | Language-specific and interactive code display.          |
-| Custom Components             | Embed custom, reusable components in your docs.          |
-| Light & Dark Mode             | Toggle between light and dark themes.                    |
-| Search Functionality          | Quickly find content with Algolia DocsSearch.             |
-| Code Switcher                 | Switch between code languages or variations.             |
-| Code Copy                     | Copy code blocks with a single click.                    |
-| TOC Observer Highlight        | Highlight active sections in the TOC as you scroll.      |
-| Static Site Generation        | Generate a static, high-performance site.                |
-| SEO-Optimized                 | Structured for optimal search engine indexing.           |
-| Internationalisation (New)             | Added support for i18n for multiple languages |
+Contributions are welcome! Please check our contribution guidelines before submitting PRs.
 
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-guide`)
+3. Commit your changes (`git commit -m 'Add amazing guide'`)
+4. Push to the branch (`git push origin feature/amazing-guide`)
+5. **IMPORTANT**: Always run `pnpm lint` before submitting your PR
+6. Open a Pull Request
+
+## Deployment
+
+This site is deployed on [Vercel](https://vercel.com). All accepted pull requests to the main branch are automatically deployed to production.
+
+**Note**: Since merged PRs automatically go live, please ensure your contributions are thoroughly tested and linted before submission.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
