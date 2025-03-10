@@ -31,6 +31,10 @@ export const ROUTES: EachRoute[] = [
         title: "5-Star Gem Internal Sockets",
         href: "/internal-gems",
       },
+      {
+        title: "Reforging Guide",
+        href: "/reforging",
+      },
     ],
   },
   {
