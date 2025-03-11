@@ -38,3 +38,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# pagefind
+.pagefind-temp/
+public/pagefind
+public/pagefind-config.json
+public/pagefind-metadata.json

@@ -23,6 +23,7 @@ The Diablo Immortal Guide is a community-driven resource designed to help player
 - **Event Tracker**: Stay updated with current and upcoming events
 - **Blog Section**: Latest news, patch notes, and meta analysis
 - **Responsive Design**: Optimal viewing on both mobile and desktop
+- **Fast Search**: Client-side search functionality for quickly finding content
 
 ## For Developers
 
