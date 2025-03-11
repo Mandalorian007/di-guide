@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="flex sm:min-h-[85.5vh] min-h-[82vh] flex-col sm:items-center justify-center text-center px-2 sm:py-8 py-12">
       <Link
-        href="https://github.com/yourusername/di-guide"
+        href="https://github.com/Mandalorian007/di-guide"
         target="_blank"
         className="mb-5 sm:text-lg flex items-center gap-2 underline underline-offset-4 sm:-mt-12"
       >
