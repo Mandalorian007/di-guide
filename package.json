@@ -5,12 +5,11 @@
   "description": "Comprehensive guide and resource hub for Diablo Immortal players",
   "type": "module",
   "scripts": {
-    "predev": "node scripts/pagefind-indexer.js",
-    "dev": "next dev",
-    "build": "next build",
-    "postbuild": "node scripts/pagefind-indexer.js",
+    "dev": "pnpm search-index && next dev",
+    "build": "pnpm search-index && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "search-index": "node scripts/generate-search-index.js"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.3",
@@ -21,8 +20,10 @@
     "@radix-ui/react-scroll-area": "^1.2.3",
     "@radix-ui/react-slot": "^1.1.2",
     "@radix-ui/react-tabs": "^1.1.3",
+    "@types/flexsearch": "^0.7.42",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "flexsearch": "^0.7.43",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.435.0",
     "next": "15.0.4",
@@ -46,7 +47,6 @@
     "@types/react-dom": "^19.0.4",
     "eslint": "^8.57.1",
     "eslint-config-next": "15.0.3",
-    "pagefind": "^1.3.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.2"
