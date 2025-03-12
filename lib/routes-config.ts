@@ -39,6 +39,10 @@ export const ROUTES: EachRoute[] = [
         title: "Normal Gems Guide",
         href: "/normal-gems",
       },
+      {
+        title: "Stats Guide",
+        href: "/stats",
+      },
     ],
   },
   {

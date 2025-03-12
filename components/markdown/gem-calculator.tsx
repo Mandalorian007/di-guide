@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 
 interface GemRankData {
@@ -94,7 +94,6 @@ const IBEN_COSTS: IbenCost[] = [
 
 // Constants for Iben Fahd calculations
 const IBEN_STAT_POINTS_PER_LEVEL = 18;
-const IBEN_PLAT_PER_STONE = 9.646;
 
 export default function GemCalculator() {
   const [platPrice, setPlatPrice] = useState<number>(400);
@@ -104,11 +103,7 @@ export default function GemCalculator() {
     ibenEquivalent: string;
   }>>([]);
 
-  useEffect(() => {
-    calculateCosts();
-  }, [platPrice]);
-
-  const calculateCosts = () => {
+  const calculateCosts = useCallback(() => {
     // Calculate platinum per stat point for each Iben level
     const ibenPlatPerPoint = IBEN_COSTS.map(level => {
       if (level.level === 60) return { level: level.level, platPerPoint: Infinity }; // Handle max level
@@ -153,7 +148,11 @@ export default function GemCalculator() {
     });
 
     setCalculatedData(newData);
-  };
+  }, [platPrice]);
+
+  useEffect(() => {
+    calculateCosts();
+  }, [calculateCosts]);
 
   const formatNumber = (num: number): string => {
     return num.toLocaleString(undefined, { maximumFractionDigits: 0 });
