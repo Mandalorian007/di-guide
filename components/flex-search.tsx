@@ -35,11 +35,22 @@ export default function FlexSearchComponent() {
     searchIndex.current = new FlexSearch.Document({
       document: {
         id: 'id',
-        index: ['title', 'content'],
+        index: [
+          {
+            field: 'title',
+            tokenize: 'full',
+            optimize: true,
+            resolution: 9
+          },
+          {
+            field: 'content',
+            tokenize: 'full',
+            optimize: true,
+            resolution: 9
+          }
+        ],
         store: ['title', 'content', 'url']
-      },
-      tokenize: 'forward',
-      cache: true
+      }
     });
 
     // Load and index the content
@@ -49,10 +60,20 @@ export default function FlexSearchComponent() {
         const response = await fetch('/search-index.json');
         const data = await response.json();
         
-        // Add documents to the index
-        data.forEach((doc: SearchDocument) => {
-          searchIndex.current?.add(doc);
+        console.log('Loading search index documents:', data);
+        
+        // Add documents to the index with explicit field indexing
+        data.forEach((doc: SearchDocument, index: number) => {
+          const docId = String(index + 1);
+          searchIndex.current?.add({
+            id: docId,
+            title: doc.title,
+            content: doc.content,
+            url: doc.url
+          });
         });
+        
+        console.log('Search index initialized with', data.length, 'documents');
       } catch (error) {
         console.error('Failed to load search index:', error);
       } finally {
@@ -70,41 +91,64 @@ export default function FlexSearchComponent() {
     }
 
     try {
-      const titleResults = await searchIndex.current.search(searchQuery, {
-        index: ['title'],
-        limit: 5,
-        enrich: true
-      });
+      // Normalize the search query
+      const normalizedQuery = searchQuery.toLowerCase().trim();
+      console.log('Search query:', normalizedQuery);
 
-      const contentResults = await searchIndex.current.search(searchQuery, {
-        index: ['content'],
-        limit: 3,
-        enrich: true
-      });
+      // Search in both title and content with different configurations
+      const results = await Promise.all([
+        searchIndex.current.search({
+          query: normalizedQuery,
+          field: 'title',
+          limit: 15,
+          suggest: true
+        }),
+        searchIndex.current.search({
+          query: normalizedQuery,
+          field: 'content',
+          limit: 15,
+          suggest: true
+        })
+      ]);
+
+      console.log('Raw search results:', results);
 
       // Process and deduplicate results
-      const processResults = (results: unknown[]) => {
-        return results.flatMap(result => {
-          const searchResult = result as { result: Array<{ doc: SearchDocument; id: string }> };
-          return searchResult.result.map(doc => ({
-            id: doc.id,
-            title: doc.doc?.title || 'Untitled',
-            content: doc.doc?.content || '',
-            url: doc.doc?.url || '#'
-          }));
+      const processResults = (searchResults: unknown[]) => {
+        if (!Array.isArray(searchResults)) return [];
+        
+        return searchResults.flatMap(result => {
+          if (!result || typeof result !== 'object') return [];
+          
+          // Handle the FlexSearch result format
+          if ('result' in result) {
+            const searchResult = result as { result: Array<{ doc: SearchDocument; id: string }> };
+            return searchResult.result.map(doc => ({
+              id: doc.id,
+              title: doc.doc?.title || 'Untitled',
+              content: doc.doc?.content || '',
+              url: doc.doc?.url || '#'
+            }));
+          }
+          return [];
         });
       };
 
-      const allResults = [
-        ...processResults(titleResults),
-        ...processResults(contentResults)
-      ];
+      // Combine and process all results
+      const allResults = results.flatMap(r => processResults([r]));
 
-      // Deduplicate by ID
+      // Only proceed with deduplication if we have results
+      if (allResults.length === 0) {
+        setResults([]);
+        return;
+      }
+
+      // Deduplicate by URL instead of ID to better handle multiple matches
       const uniqueResults = Array.from(
-        new Map(allResults.map(item => [item.id, item])).values()
-      ).slice(0, 8);
+        new Map(allResults.map(item => [item.url, item])).values()
+      ).slice(0, 20);
 
+      console.log('Processed results:', uniqueResults);
       setResults(uniqueResults);
     } catch (error) {
       console.error('Search error:', error);
