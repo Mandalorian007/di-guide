@@ -35,6 +35,10 @@ export const ROUTES: EachRoute[] = [
         title: "Reforging Guide",
         href: "/reforging",
       },
+      {
+        title: "Normal Gems Guide",
+        href: "/normal-gems",
+      },
     ],
   },
   {

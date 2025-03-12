@@ -20,6 +20,7 @@ import Image from "@/components/markdown/image";
 import Link from "@/components/markdown/link";
 import Outlet from "@/components/markdown/outlet";
 import Files from "@/components/markdown/files";
+import GemCalculator from "@/components/markdown/gem-calculator";
 import {
   Table,
   TableBody,
@@ -43,6 +44,7 @@ const components = {
   a: Link,
   Outlet,
   Files,
+  GemCalculator,
   table: Table,
   thead: TableHeader,
   th: TableHead,
