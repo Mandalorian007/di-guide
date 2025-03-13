@@ -38,17 +38,19 @@ export function SheetLeftbar() {
             <Logo />
           </SheetClose>
         </SheetHeader>
-        <div className="flex flex-col gap-4 overflow-y-auto">
-          <div className="flex flex-col gap-2.5 mt-3 mx-2 px-5">
-            <NavMenu isSheet />
+        <ScrollArea className="flex-1">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2.5 mt-3 mx-2 px-5">
+              <NavMenu isSheet />
+            </div>
+            <div className="ml-2 pl-5">
+              <DocsMenu isSheet />
+            </div>
+            <div className="p-6 pb-4 flex gap-2.5">
+              <FooterButtons />
+            </div>
           </div>
-          <div className="ml-2 pl-5">
-            <DocsMenu isSheet />
-          </div>
-          <div className="p-6 pb-4 flex gap-2.5">
-            <FooterButtons />
-          </div>
-        </div>
+        </ScrollArea>
       </SheetContent>
     </Sheet>
   );

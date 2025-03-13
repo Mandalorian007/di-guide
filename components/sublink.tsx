@@ -19,12 +19,17 @@ export default function SubLink({
   level,
   isSheet,
   tag,
-}: EachRoute & { level: number; isSheet: boolean }) {
+  currentPath,
+}: EachRoute & { level: number; isSheet: boolean; currentPath?: string }) {
   const path = usePathname();
-  const [isOpen, setIsOpen] = useState(level == 0);
+  // Top-level items start expanded only if we're in that section
+  const [isOpen, setIsOpen] = useState(
+    level === 0 && currentPath ? currentPath.includes(href) : level === 0
+  );
 
   useEffect(() => {
-    if (path == href || path.includes(href)) setIsOpen(true);
+    // Only auto-expand if we're in that section
+    if (path === href || path.includes(href)) setIsOpen(true);
   }, [href, path]);
 
   const Comp = (
@@ -92,6 +97,7 @@ export default function SubLink({
                 href: `${href + innerLink.href}`,
                 level: level + 1,
                 isSheet,
+                currentPath,
               };
               return <SubLink key={modifiedItems.href} {...modifiedItems} />;
             })}
