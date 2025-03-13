@@ -43,6 +43,10 @@ export const ROUTES: EachRoute[] = [
         title: "Stats Guide",
         href: "/stats",
       },
+      {
+        title: "Familiar Setup Guide",
+        href: "/familiar-setup",
+      },
     ],
   },
   {
