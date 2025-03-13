@@ -47,6 +47,10 @@ export const ROUTES: EachRoute[] = [
         title: "Familiar Setup Guide",
         href: "/familiar-setup",
       },
+      {
+        title: "Legendary Gems Guide",
+        href: "/legendary-gems",
+      },
     ],
   },
   {
